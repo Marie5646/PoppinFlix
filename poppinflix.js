@@ -79,8 +79,9 @@
 
      function recommendedMoviesOne() {
          let html = ''
-         fetch('https://api.themoviedb.org/3/movie/%20646389/recommendations?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US&page=1', options).then(res => res.json()).then(data => {
-             for (let i = 0; i <= 1; i++) {
+         fetch('https://api.themoviedb.org/3/movie/%20646389/recommendations?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US&page=1', options).then(res => res.json())
+                  .then(data => {
+                  for (let i = 0; i <= 1; i++) {
                  console.log(data.results[i])
                  html += `<div>`
                  html += `<div class="fill"> <img src="https://image.tmdb.org/t/p/w500${data.results[i].backdrop_path}" className="img" alt="..."></div>`
@@ -99,10 +100,10 @@
      function myMovies() {
          let html = ''
          fetch('https://marie5646.github.io/Poppinflix.github.io/poppinflix.json')
-             .then(response => response.json())
+             .then(res => res.json())
              .then(data => {
+                 for (let i = 0; i <= 1; i++) {
                      html += `<div class="media-element"><img src="${data.imgUrl}" class="my-movies" alt="..."><button id=${data.id} data-bs-toggle="modal" data-bs-target="#exampleModal" class="my-movies-btn">Details</button></div>`
-                 })
                  $('.media-scroller').html(html)
 
              .catch(error => console.log(error))
