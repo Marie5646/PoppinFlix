@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="235.5" height="69.5" viewBox="0 0 235.5 69.5">
+  <defs>
+    <filter id="Rectangle_36" x="0" y="0" width="235.5" height="69.5" filterUnits="userSpaceOnUse">
+      <feOffset dx="9" dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-opacity="0.533"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_9" data-name="Group 9" transform="translate(-1364.862 -527)">
+    <g transform="matrix(1, 0, 0, 1, 1364.86, 527)" filter="url(#Rectangle_36)">
+      <rect id="Rectangle_36-2" data-name="Rectangle 36" width="222" height="58" rx="29" fill="red"/>
+    </g>
+    <text id="ADD_TO_WATCHLIST" data-name="ADD TO WATCHLIST" transform="translate(1393.862 563)" fill="#fff" font-size="18" font-family="SigmundPRO-Medium, Sigmund PRO" font-weight="500"><tspan x="0" y="0">ADD TO WATCHLIST</tspan></text>
+  </g>
+</svg>
