@@ -7,8 +7,8 @@
          fetch('https://api.themoviedb.org/3/trending/all/day?api_key=00f190c8081e28e8456dfb59457bb2bd', options).then(res => res.json()).then(data => {
              for (let i = 0; i <= 3; i++) {
                  let html = "";
-                 let newMovieId = data.results[i].id
-                 console.log(data.results[i].id)
+                 let newMovieId = data.results[3].id
+                 console.log(data.results[3])
                  let poster = data.results[3].poster_path
                  let backDrop = (data.results[3].backdrop_path)
                  html += `<div class="trendingdiv">`
@@ -23,7 +23,7 @@
                  fetch(`https://api.themoviedb.org/3/movie/${newMovieId}/videos?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US`, options).then(res => res.json()).then(data => {
                      html += `<img class="mini-trailer-poster" src="https://image.tmdb.org/t/p/w500${poster}">`
                      html += `<img class="trailer-poster" src="https://image.tmdb.org/t/p/w500${backDrop}">`
-                     html += `<iframe  class="trailer" loading="lazy"  style="border:none;" allow="autoplay" src="https://www.youtube.com/embed/${data.results[5].key}?autoplay=1&" ></iframe>`
+                     html += `<iframe  class="trailer" loading="lazy"  style="border:none;" allow="autoplay" src="https://www.youtube.com/embed/${data.results[i].key}?autoplay=1&" ></iframe>`
                      $(".upcoming-movie").html(html);
                  })
              }
