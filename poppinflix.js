@@ -100,12 +100,11 @@
          let html = ''
          fetch('https://marie5646.github.io/Poppinflix.github.io/poppinflix.json')
              .then(response => response.json())
-             .then(movieData => {
-                 movieData.map(data => {
+             .then(data => {
                      html += `<div class="media-element"><img src="${data.imgUrl}" class="my-movies" alt="..."><button id=${data.id} data-bs-toggle="modal" data-bs-target="#exampleModal" class="my-movies-btn">Details</button></div>`
                  })
                  $('.media-scroller').html(html)
-             })
+
              .catch(error => console.log(error))
      }
 
