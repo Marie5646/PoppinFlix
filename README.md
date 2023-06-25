@@ -1,4 +1,5 @@
 # PoppinFlix
+Web Application only
 
 ## Table of Contents
 
@@ -28,7 +29,7 @@ $ json-server --watch poppinflx.json
 ## Features
 - Feature 1: Users can add movies to watchlist.
 - Feature 2: Users can remove movies from watchlist.
-- Feature 3: Users can edit movies on watchlist.
+- Feature 3: Users can edit movie ratings on watchlist.
 
 ## Contributing
 1. Fork the repository.
