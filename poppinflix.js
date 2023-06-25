@@ -4,7 +4,7 @@
 
      function TrendingMovie() {
          let html = ''
-         fetch('https://api.themoviedb.org/3/trending/all/day?api_key=00f190c8081e28e8456dfb59457bb2bd', options).then(res => res.json()).then(data => {
+         fetch('https://api.themoviedb.org/3/trending/all/day?api_key='+ MOVIEAPI, options).then(res => res.json()).then(data => {
              for (let i = 0; i <= 3; i++) {
                  let html = "";
                  let newMovieId = data.results[3].id
@@ -20,7 +20,7 @@
                  html += `<div class="summarydiv">`
                  html += `<span class="trendingflix-summary">${data.results[2].overview}</p>`
                  html += `</div>`
-                 fetch(`https://api.themoviedb.org/3/movie/${newMovieId}/videos?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US`, options).then(res => res.json()).then(data => {
+                 fetch(`https://api.themoviedb.org/3/movie/${newMovieId}/videos?api_key=` +MOVIEAPI+ '&language=en-US', options).then(res => res.json()).then(data => {
                      html += `<img class="mini-trailer-poster" src="https://image.tmdb.org/t/p/w500${poster}">`
                      html += `<img class="trailer-poster" src="https://image.tmdb.org/t/p/w500${backDrop}">`
                      html += `<iframe  class="trailer" loading="lazy"  style="border:none;" allow="autoplay" src="https://www.youtube.com/embed/${data.results[i].key}?autoplay=1&" ></iframe>`
@@ -33,9 +33,11 @@
 
      TrendingMovie()
 
-     function searchMovie() {
+
+
+  function searchMovie() {
          let html = ''
-         fetch(`https://api.themoviedb.org/3/search/multi?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US&page=1&include_adult=falsehttps://api.themoviedb.org/3/search/company?api_key=00f190c8081e28e8456dfb59457bb2bd&query=${search}&page=1`, options).then(res => res.json()).then(data => {
+         fetch('https://api.themoviedb.org/3/search/multi?api_key='+ MOVIEAPI + '&language=en-US&page=1&include_adult=falsehttps://api.themoviedb'+'.org/3/search/company?api_key=' + MOVIEAPI + `&query=${search}&page=1`, options).then(res => res.json()).then(data => {
              for (let i = 0; i <= data.length; i++) {
                  let poster = data.results[i].poster_path
                  let movieTitle = data.results[i].title
@@ -66,7 +68,7 @@
 
      function newMovies() {
          let html = ''
-         fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US&page=1', options).then(res => res.json()).then(data => {
+         fetch('https://api.themoviedb.org/3/movie/now_playing?api_key='+MOVIEAPI+'&language=en-US&page=1', options).then(res => res.json()).then(data => {
              for (let i = 0; i <= 3; i++) {
                  html += `<div class="new-movies-div"><img class="movie rounded" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}"><button id=${data.results[i].id} type="button" data-bs-toggle="modal" data-bs-target="#newMovieModal" class="newmovies-btn">Details</button></div>`
                  let newMovieId = data.results[i].id
@@ -80,7 +82,7 @@
 
      function recommendedMoviesOne() {
          let html = ''
-         fetch('https://api.themoviedb.org/3/movie/%20646389/recommendations?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US&page=1', options).then(res => res.json()).then(data => {
+         fetch('https://api.themoviedb.org/3/movie/%20646389/recommendations?api_key=' + MOVIEAPI +'&language=en-US&page=1', options).then(res => res.json()).then(data => {
              for (let i = 0; i <= 1; i++) {
                  console.log(data.results[i])
                  html += `<div>`
@@ -142,7 +144,7 @@
      }
 
      function newModalMovie(id) {
-         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US\n`, options)
+         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=`+ MOVIEAPI + '&language=en-US\n', options)
              .then(response => response.json())
              .then(data => {
                  const { title, poster_path, vote_average, summary, overview} = data;
@@ -161,7 +163,7 @@
              })
      }
 function recModalMovie(id) {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US\n`, options)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=`+MOVIEAPI + '&language=en-US\n', options)
         .then(response => response.json())
         .then(data => {
             const {title, poster_path, vote_average, summary, overview,key} = data;
@@ -177,7 +179,8 @@ function recModalMovie(id) {
 }
 
      function getTrailer(id) {
-         fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US`, options)
+         fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=`+ MOVIEAPI
+         +'&language=en-US', options)
              .then(response => response.json())
              .then(data => {
                  const {key} = data;
@@ -188,7 +191,7 @@ function recModalMovie(id) {
              })
      }
 function getTrailer2(id) {
-    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US`, options)
+    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=`+ MOVIEAPI +'&language=en-US', options)
         .then(response => response.json())
         .then(data => {
             // const {key} = data;
@@ -267,7 +270,7 @@ function getTrailer2(id) {
       location.reload()
   }
   function addMovies(id) {
-      fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US\n`, options)
+      fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=`+ MOVIEAPI +'&language=en-US\n', options)
           .then(response => response.json())
           .then(data => {
               console.log(data)
