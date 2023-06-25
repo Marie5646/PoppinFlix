@@ -1,5 +1,4 @@
 
-
   const options = {method: 'GET'};
 
      function TrendingMovie() {
@@ -99,7 +98,7 @@
 
      function myMovies() {
          let html = ''
-         fetch('http://localhost:3000/movies')
+         fetch('https://marie5646.github.io/Poppinflix.github.io/poppinflix.json')
              .then(response => response.json())
              .then(movieData => {
                  movieData.map(data => {
@@ -116,7 +115,7 @@
 
 
      function modalDetails(id) {
-         fetch(`http://localhost:3000/movies/${id}`)
+         fetch(`https://marie5646.github.io/Poppinflix.github.io/poppinflix.json/${id}`)
              .then(response => response.json())
              .then(data => {
                  const {title, genre, imgUrl, rating, summary, id} = data; // get data fields from response
@@ -239,7 +238,7 @@ function getTrailer2(id) {
 
      function deleteMovies(id) {
          console.log('test')
-         fetch(`http://localhost:3000/movies/${id}`, {
+         fetch(`https://marie5646.github.io/Poppinflix.github.io/poppinflix.json/${id}`, {
              method: 'DELETE',
 
          })
@@ -252,7 +251,7 @@ function getTrailer2(id) {
   function editMovies(id) {
          console.log(id)
       console.log( $(".editInput").val().toString())
-      fetch(`http://localhost:3000/movies/${id}`, {
+      fetch(`https://marie5646.github.io/Poppinflix.github.io/poppinflix.json/${id}`, {
           method: 'PATCH',
           headers: {
               'Content-Type': 'application/json'
@@ -276,7 +275,7 @@ function getTrailer2(id) {
               let movieDescrip = data.overview;
               let movieImage = 'https://image.tmdb.org/t/p/w500' + data.poster_path;
 
-              fetch('http://localhost:3000/movies', {
+              fetch('https://marie5646.github.io/Poppinflix.github.io/poppinflix.json', {
                   method: 'POST',
                   headers: {
                       'Content-Type': 'application/json'
