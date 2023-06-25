@@ -1,4 +1,5 @@
 
+
   const options = {method: 'GET'};
 
      function TrendingMovie() {
@@ -6,15 +7,15 @@
          fetch('https://api.themoviedb.org/3/trending/all/day?api_key=00f190c8081e28e8456dfb59457bb2bd', options).then(res => res.json()).then(data => {
              for (let i = 0; i <= 3; i++) {
                  let html = "";
-                 let newMovieId = data.results[3].id
-                 console.log(data.results[3])
+                 let newMovieId = data.results[i].id
+                 console.log(data.results[i].id)
                  let poster = data.results[3].poster_path
                  let backDrop = (data.results[3].backdrop_path)
                  html += `<div class="trendingdiv">`
                  html += `<img class="trendingflix" src="trendingflix.svg" width="20px" height="20px" alt="logo">`
                  html += `<p class="trendingflix-title">${data.results[3].original_title}</p>`
                  html += `<img id="play-btn" onclick="showTrailer()" type="button" src="playbtn.svg" alt="btn">`
-                 html += `<img class="trending-btn"  type="button" onclick="addMovies(${newMovieId})" src="addtowatchlistbtn.svg" alt="btn">`
+                 html += `<img class="trending-btn"  onclick="addMovies(${newMovieId})" src="addtowatchlistbtn.svg" alt="btn">`
                  html += `</div>`
                  html += `<div class="summarydiv">`
                  html += `<span class="trendingflix-summary">${data.results[2].overview}</p>`
@@ -22,7 +23,7 @@
                  fetch(`https://api.themoviedb.org/3/movie/${newMovieId}/videos?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US`, options).then(res => res.json()).then(data => {
                      html += `<img class="mini-trailer-poster" src="https://image.tmdb.org/t/p/w500${poster}">`
                      html += `<img class="trailer-poster" src="https://image.tmdb.org/t/p/w500${backDrop}">`
-                     html += `<iframe  class="trailer" loading="lazy"  style="border:none;" allow="autoplay" src="https://www.youtube.com/embed/${data.results[i].key}?autoplay=1&" ></iframe>`
+                     html += `<iframe  class="trailer" loading="lazy"  style="border:none;" allow="autoplay" src="https://www.youtube.com/embed/${data.results[5].key}?autoplay=1&" ></iframe>`
                      $(".upcoming-movie").html(html);
                  })
              }
@@ -79,9 +80,8 @@
 
      function recommendedMoviesOne() {
          let html = ''
-         fetch('https://api.themoviedb.org/3/movie/%20646389/recommendations?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US&page=1', options).then(res => res.json())
-                  .then(data => {
-                  for (let i = 0; i <= 1; i++) {
+         fetch('https://api.themoviedb.org/3/movie/%20646389/recommendations?api_key=00f190c8081e28e8456dfb59457bb2bd&language=en-US&page=1', options).then(res => res.json()).then(data => {
+             for (let i = 0; i <= 1; i++) {
                  console.log(data.results[i])
                  html += `<div>`
                  html += `<div class="fill"> <img src="https://image.tmdb.org/t/p/w500${data.results[i].backdrop_path}" className="img" alt="..."></div>`
@@ -99,13 +99,14 @@
 
      function myMovies() {
          let html = ''
-         fetch('https://marie5646.github.io/Poppinflix.github.io/poppinflix.json')
-             .then(res => res.json())
-             .then(data => {
-                 for (let i = 0; i <= 1; i++) {
+         fetch('http://localhost:3000/movies')
+             .then(response => response.json())
+             .then(movieData => {
+                 movieData.map(data => {
                      html += `<div class="media-element"><img src="${data.imgUrl}" class="my-movies" alt="..."><button id=${data.id} data-bs-toggle="modal" data-bs-target="#exampleModal" class="my-movies-btn">Details</button></div>`
+                 })
                  $('.media-scroller').html(html)
-
+             })
              .catch(error => console.log(error))
      }
 
@@ -115,7 +116,7 @@
 
 
      function modalDetails(id) {
-         fetch(`https://marie5646.github.io/Poppinflix.github.io/poppinflix.json/${id}`)
+         fetch(`http://localhost:3000/movies/${id}`)
              .then(response => response.json())
              .then(data => {
                  const {title, genre, imgUrl, rating, summary, id} = data; // get data fields from response
@@ -238,7 +239,7 @@ function getTrailer2(id) {
 
      function deleteMovies(id) {
          console.log('test')
-         fetch(`https://marie5646.github.io/Poppinflix.github.io/poppinflix.json/${id}`, {
+         fetch(`http://localhost:3000/movies/${id}`, {
              method: 'DELETE',
 
          })
@@ -251,7 +252,7 @@ function getTrailer2(id) {
   function editMovies(id) {
          console.log(id)
       console.log( $(".editInput").val().toString())
-      fetch(`https://marie5646.github.io/Poppinflix.github.io/poppinflix.json/${id}`, {
+      fetch(`http://localhost:3000/movies/${id}`, {
           method: 'PATCH',
           headers: {
               'Content-Type': 'application/json'
@@ -275,7 +276,7 @@ function getTrailer2(id) {
               let movieDescrip = data.overview;
               let movieImage = 'https://image.tmdb.org/t/p/w500' + data.poster_path;
 
-              fetch('https://marie5646.github.io/Poppinflix.github.io/poppinflix.json', {
+              fetch('http://localhost:3000/movies', {
                   method: 'POST',
                   headers: {
                       'Content-Type': 'application/json'
