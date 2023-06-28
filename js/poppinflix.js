@@ -7,15 +7,15 @@
          fetch('https://api.themoviedb.org/3/trending/all/day?api_key='+ MOVIEAPI, options).then(res => res.json()).then(data => {
              for (let i = 0; i <= 3; i++) {
                  let html = "";
-                 let newMovieId = data.results[3].id
-                 console.log(data.results[3])
-                 let poster = data.results[3].poster_path
-                 let backDrop = (data.results[3].backdrop_path)
+                 let newMovieId = data.results[2].id
+                 console.log(data.results[2])
+                 let poster = data.results[2].poster_path
+                 let backDrop = (data.results[2].backdrop_path)
                  html += `<div class="trendingdiv">`
-                 html += `<img class="trendingflix" src="trendingflix.svg" width="20px" height="20px" alt="logo">`
-                 html += `<p class="trendingflix-title">${data.results[3].original_title}</p>`
-                 html += `<img id="play-btn" onclick="showTrailer()" type="button" src="playbtn.svg" alt="btn">`
-                 html += `<img class="trending-btn"  onclick="addMovies(${newMovieId})" src="addtowatchlistbtn.svg" alt="btn">`
+                 html += `<img class="trendingflix" src="../img/trendingflix.svg" width="20px" height="20px" alt="logo">`
+                 html += `<p class="trendingflix-title">${data.results[2].original_title}</p>`
+                 html += `<img id="play-btn" onclick="showTrailer()" type="button" src="../img/playbtn.svg" alt="btn">`
+                 html += `<img class="trending-btn"  onclick="addMovies(${newMovieId})" src="../img/addtowatchlistbtn.svg" alt="btn">`
                  html += `</div>`
                  html += `<div class="summarydiv">`
                  html += `<span class="trendingflix-summary">${data.results[2].overview}</p>`
@@ -70,7 +70,7 @@
          let html = ''
          fetch('https://api.themoviedb.org/3/movie/now_playing?api_key='+MOVIEAPI+'&language=en-US&page=1', options).then(res => res.json()).then(data => {
              for (let i = 0; i <= 3; i++) {
-                 html += `<div class="new-movies-div"><img class="movie rounded" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}"><button id=${data.results[i].id} type="button" data-bs-toggle="modal" data-bs-target="#newMovieModal" class="newmovies-btn">Details</button></div>`
+                 html += `<div class="new-movies-div"><img style="border-radius: 32px" class="movie rounded" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}"><button id=${data.results[i].id} type="button" data-bs-toggle="modal" data-bs-target="#newMovieModal" class="newmovies-btn">Details</button></div>`
                  let newMovieId = data.results[i].id
              }
              $('.new-movies').html(html)
@@ -125,17 +125,16 @@
                  let movieId= id;
                  let html = "";
                  html += `<h3 id="modal-title"> ${title}</h3>`;
+                 // html += '<br>'
                  html += `<span class="modal-genre"> Genre: ${genre}</span>`;
                  html += `<p class="modal-rating"> Rating: ${rating}</p>`;
                  html += `<img class="modal-image" src="${imgUrl}"</p>`;
                  html += `<h2 class="modal-summary-header"> Summary:</h2>`;
                  html += `<p class="modal-summary"> ${summary}"</p>`;
                  $(".editRating").append(`<div class="input-group input-group-sm mb-3"> <br> <input type="text" class="editInput form-control" aria-label="Sizing example input" value="${rating}" name="editInput" aria-describedby="inputGroup-sizing-sm"> </div>`)
-                 html += ` <button type="button" data-bs-toggle="modal" data-bs-target="#editRating" class="edit btn btn-danger">Edit Rating</button>`
-                 html += `<br>`
-                 html += ` <button id="${id}" type="button" onclick="deleteMovies(id)" class="delete btn btn-danger">Delete Movie</button>`
+                 $("#modal-footer1").append(` <button type="button" data-bs-toggle="modal" data-bs-target="#editRating" class="edit btn btn-danger">Edit Rating</button>` + `<button id="${id}" type="button" onclick="deleteMovies(id)" class="delete btn btn-danger">Delete Movie</button>`)
                  $(".modal-body").html(html)
-                 $(".modal-footer").append(`<button type="button" id="${id}" onclick="editMovies(${id})" class="btn btn-danger">Save changes</button>`)
+                 $("#editRating-foot").append(`<button type="button" id="${id}" onclick="editMovies(${id})" class="btn btn-danger">Save changes</button>`)
              })
              .catch(error => {
                  console.error(error);
@@ -205,9 +204,10 @@ function getTrailer2(id) {
 
 
      function clearModal() {
-         $('.btn-close').on("click", function () {
+         $('.closed').on("click", function () {
              $('.modal-body').empty()
-
+             $('.modal-footer').empty()
+             $('.editRating').empty()
          })
      }
 

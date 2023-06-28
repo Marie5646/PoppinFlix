@@ -4,7 +4,7 @@
       "id": 1,
       "title": "The GodFather",
       "genre": "Crime",
-      "rating": "8.2/10",
+      "rating": "7/10",
       "imgUrl": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
       "summary": "\"The Godfather\" is a 1972 crime film directed by Francis Ford Coppola, based on the novel by Mario Puzo. The film tells the story of the Corleone family, an Italian-American Mafia clan, and the power struggles and conflicts that arise within and outside the family. The movie's main character is Michael Corleone, who reluctantly takes over as the head of the family after his father is shot. The film explores themes of family, loyalty, power, and corruption, and features iconic performances by Marlon Brando, Al Pacino, and James Caan. \"The Godfather\" is widely regarded as one of the greatest films of all time and has become a cultural icon."
     },
@@ -12,31 +12,25 @@
       "id": 6,
       "title": "Toy Story",
       "genre": "Animation",
-      "rating": "10/10",
+      "rating": "9/10",
       "imgUrl": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_.jpg",
       "summary": "Toy Story is a 1995 animated film directed by John Lasseter, produced by Pixar Animation Studios, and distributed by Walt Disney Pictures. The movie follows the adventures of a group of toys, led by Woody the cowboy and Buzz Lightyear the space ranger, who come to life when their owner, a boy named Andy, is not around. When Buzz is accidentally knocked out of a window and ends up in the hands of a dangerous neighbor, Woody leads a daring rescue mission to save him. The film explores themes of friendship, loyalty, and the fear of obsolescence, and features the voices of Tom Hanks, Tim Allen, and Don Rickles, among others. Toy Story was a critical and commercial success, and is widely regarded as a groundbreaking and influential film in the animation genre."
-    },
-    {
-      "id": 8,
-      "title": "Mean Girls",
-      "genre": "Comedy",
-      "rating": "9/10",
-      "imgUrl": "https://m.media-amazon.com/images/M/MV5BMjE1MDQ4MjI1OV5BMl5BanBnXkFtZTcwNzcwODAzMw@@._V1_.jpg",
-      "summary": "\"Mean Girls\" is a 2004 teen comedy film directed by Mark Waters and written by Tina Fey. The movie follows Cady Heron, a teenager who moves from Africa to the United States and struggles to navigate the complex social hierarchy of high school. She befriends two outcasts, Janis and Damian, who introduce her to the school's most popular clique, the \"Plastics,\" led by the manipulative Regina George. As Cady becomes more embroiled in the Plastics' world, she must choose between betraying her new friends or succumbing to the toxic culture of popularity."
     },
     {
       "title": "Extraction 2",
       "genre": "N/A",
       "imgUrl": "https://image.tmdb.org/t/p/w500/7gKI9hpEMcZUQpNgKrkDzJpbnNS.jpg",
       "summary": "Tasked with extracting a family who is at the mercy of a Georgian gangster, Tyler Rake infiltrates one of the world's deadliest prisons in order to save them. But when the extraction gets hot, and the gangster dies in the heat of battle, his equally ruthless brother tracks down Rake and his team to Sydney, in order to get revenge.",
-      "id": 13
+      "id": 13,
+      "rating": "5/10"
     },
     {
       "title": "Fast X",
       "genre": "N/A",
       "imgUrl": "https://image.tmdb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
       "summary": "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything—and everyone—that Dom loves, forever.",
-      "id": 14
+      "id": 14,
+      "rating": "9/10"
     },
     {
       "title": "The Super Mario Bros. Movie",
@@ -45,14 +39,6 @@
       "imgUrl": "https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
       "summary": "While working underground to fix a water main, Brooklyn plumbers—and brothers—Mario and Luigi are transported down a mysterious pipe and wander into a magical new world. But when the brothers are separated, Mario embarks on an epic quest to find Luigi.",
       "id": 16
-    },
-    {
-      "title": "Spider-Man: Across the Spider-Verse",
-      "genre": "N/A",
-      "rating": "8.658/10",
-      "imgUrl": "https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
-      "summary": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse’s very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
-      "id": 17
     },
     {
       "title": "Extraction 2",

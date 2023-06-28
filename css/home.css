@@ -129,23 +129,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /*background-color: white;*/
     border-radius: 32px;
     margin: auto;
-    /*margin-top: 7em;*/
-    /*margin-left: 5em;*/
-    /*margin-right: auto;*/
-    /*margin-bottom: 5em;*/
+
 }
 
 .new-movies{
-    /*margin-top: 7em;*/
-    /*margin-left: 2em;*/
     display: flex;
-    /*justify-content: center;*/
-    /*align-content: center;*/
-    /*padding-top: -1em;*/
-    /*padding-bottom: 3em;*/
 }
 
 
@@ -165,9 +155,7 @@
     }
 }
 
-.delete{
-    z-index: -1;
-}
+
 
 .trailer-poster {
     position: absolute;
@@ -199,19 +187,34 @@
 
 
 .new-header{
-    color: rgb(255, 255, 255);
-    margin-left: 1.5em;
+    color: #fdd566;
+    margin-left: 3em;
     margin-top: 3em;
     font-size:x-large;
 }
 
 .watch-header{
-    color: rgb(255, 255, 255);
+    color: #fdd566;
     margin-left: 1.6em;
     margin-top: 1em;
     font-size:x-large;
+    font-family: "sigmund-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
-
+.new-movies{
+    margin-left: 3em;
+}
+.new-movies-title{
+    color: #fdd566;
+    margin-left: 3.5em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size:x-large;
+    font-family: "sigmund-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .recommended-movies{
     display: flex;
@@ -245,10 +248,8 @@ figure{
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 .fill img {
-    /*flex-shrink: 0;*/
     min-width: 100%;
     min-height: 100%;
-    /*margin-top: 22em;*/
 }
 
 .modal {
@@ -315,12 +316,14 @@ figure{
     height: 300px;
     margin-left: 15em;
     border-radius: 20px;
-    margin-top: -6em;
+    margin-top: -3em;
 }
 
 #modal-title,.modal-genre,.modal-rating{
     background-color: transparent;
+    word-wrap: normal;
 }
+
 
 .editInput{
     width: 20em;
@@ -328,18 +331,12 @@ figure{
     padding: 2em;
 }
 
-.edit{
-    margin-top: -50em;
-}
 
-.delete{
-    margin-top: -62em;
-}
-
-.modal-summary{
+.modal-summary {
     background-color: transparent;
     margin-top: 1em;
     text-align: left;
+    word-wrap: break-word;
 }
 
 .modal-summary-header{
@@ -359,7 +356,7 @@ figure{
     background-color: transparent;
     margin-left: .5em;
     margin-top: -1em;
-    color: white;
+    color:white;
     z-index: 10;
 
 }
@@ -374,6 +371,9 @@ figure{
     margin-left: 30em;
     border: 0px;
 
+}
+.modal-footer{
+    background-color: #fdd566;
 }
 
 .newmovies-btn{
@@ -398,7 +398,6 @@ figure{
     top: 0;
     left: 0;
     z-index: 6;
-    /*margin-left: 15em;*/
     margin-left: 8em;
     margin-top: 1.5em;
     box-shadow: 10px 10px 1px -5px rgba(0,0,0,0.52);
@@ -412,13 +411,14 @@ figure{
     height: 200px;
     margin-bottom: -4em;
     margin-top: 5em;
+
     background-color: transparent;
 
 
 }
 .trendingflix-title{
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     z-index: 10;
     margin-left: .2em;
     background-color: transparent;
@@ -429,7 +429,6 @@ figure{
 .trendingflix-summary{
     color: white;
     font-size: medium;
-    /*z-index: 5;*/
     background-color: transparent;
     font-family: "sigmund-pro", sans-serif;
     font-weight: normal;
@@ -522,11 +521,10 @@ img.movie.rounded{
     max-width: 270px;
     padding: 0.5em;
     margin-left: 2.5em;
+    border-radius: 32px;
 }
 
 
 .fill{
     opacity: 30%;
 }
-
-.form-control imput
